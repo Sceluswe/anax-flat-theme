@@ -1,8 +1,65 @@
-/** 
+/**
 * Anax Flat theme.
 */
-@import url(modules.less);
+@magic-number: 24px;
+@myDarkGreen: #316E01;
+@myGreen: #408A01;
+@myBlack: #0D0D0D; //#2A4B8C;
+@myTeal: #2E9972;
 
+@import url(header.less);
+@import url(main.less);
+@import url(footer.less);
+@import url(modules.less);
+@import url(media-queries.less);
+
+
+/** --------------------------------------------------------------
+ *  Misc.
+ */
+
+
+h1 {
+    border-bottom: 4px solid @myDarkGreen;
+}
+
+h2 {
+    border-bottom: 3px solid @myTeal;
+}
+
+
+p {
+    line-height: 1.5;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Links.
+ */
+
+a {
+    color: @myGreen;
+}
+
+a:visisted {
+    color: #227255;
+}
+
+.previous,
+.next {
+    margin-bottom: @magic-number;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Article.
+ */
+
+.article p {
+    margin-bottom: @magic-number * 2;
+}
 
 
 /** --------------------------------------------------------------
@@ -18,4 +75,29 @@
     img {
         vertical-align: bottom;
     }
+}
+
+.flash-logo {
+    width: 1000px;
+    height: 300px;
+}
+
+/** --------------------------------------------------------------
+ *  Breadcrumbs
+ */
+
+.breadcrumb-wrap {
+    padding-bottom: @magic-number;
+}
+
+.breadcrumb-list ul {
+    list-style: none;
+}
+
+.breadcrumb-list li {
+    display: inline;
+}
+
+.breadcrumb-list li:after {
+    content: " »";
 }

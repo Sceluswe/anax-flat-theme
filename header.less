@@ -1,0 +1,52 @@
+/** --------------------------------------------------------------
+ *  Header
+ */
+
+// Size of max navbar button
+.rm-max .rm-small .rm-button {
+    font-size: 2em;
+}
+
+@maxButtonFontSize: 2em;
+
+// Style navbar
+.rm-desktop li {
+    border-top: 4px solid @myDarkGreen;
+    color: @myBlack;
+
+    a {
+        border-top: 4px solid white;
+    }
+
+    a:hover {
+        border-top: 4px solid @myGreen;
+    }
+}
+
+.rm-desktop li:hover {
+    border-top: 4px solid @myGreen;
+}
+
+
+// Size each item in the header
+.site-logo-text,
+.navbar2,
+.profile {
+    float: left;
+    width: 30%;
+}
+
+.site-header {
+    height: 80px;
+}
+
+// Site title
+.site-logo-text {
+    font-size: 2.5em;
+
+    a {
+        padding: 12px;
+        text-decoration: none;
+        color: @myDarkGreen;
+    }
+}

@@ -5,7 +5,14 @@ img {
     max-width: 100%;
 }
 
+/*p {
+    background: black;
+}*/
+
 @media screen and (max-width: 900px) {
+    .flash-logo {
+        display: none;
+    }
     .site-logo-text {
         width: 40%;
     }
@@ -21,16 +28,47 @@ img {
 
 
 @media screen and (max-width: 750px) {
-    .sidebar {
-        //width: 100%;
+    .flash-logo {
         display: none;
+    }
+    .sidebar {
+        width: 100%;
+        //display: none;
+        clear: both;
+        li {
+            padding: @magic-number / 4;
+        }
     }
 }
 
 
 @media screen and (max-width: 700px) {
+    .main {
+        padding: @magic-number;
+        width: 80%;
+    }
+
+    .main.has-sidebar {
+        padding: @magic-number;
+        width: 80%;
+    }
+    .flash-logo {
+        display: none;
+    }
     .footer-column {
         width: 100%;
+    }
+
+    .footer-column-1 {
+        margin-bottom: @magic-number * 4;
+    }
+
+    .footer-column-1,
+    .footer-column-2,
+    .footer-column-3 {
+        border: none;
+        display: block;
+        list-style: none;
     }
 }
 
@@ -39,9 +77,8 @@ img {
      .site-logo-text {
          width: 90%;
      }
-     
+
      .navbar2 {
          display: none;
      }
  }
- 
