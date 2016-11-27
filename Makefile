@@ -137,6 +137,15 @@ upgrade-normalize:
 	# Normalizer
 	wget --quiet https://necolas.github.io/normalize.css/latest/normalize.css -O $(LESS_MODULES)/normalize.less
 
+# target: upgrade-grid       - Upgrade LESS module - grid.
+.PHONY: upgrade-grid
+upgrade-grid:
+	@$(call HELPTEXT,$@)
+
+	# grid
+	wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-float.less -O $(LESS_MODULES)/grid-float.less
+	wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-flex.less -O $(LESS_MODULES)/grid-flex.less
+
 
 
 # target: upgrade-responsive-menu - Upgrade LESS module - Responsive menu

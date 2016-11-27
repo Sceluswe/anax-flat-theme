@@ -1,0 +1,70 @@
+.site-logo-text {
+    .column(4);
+}
+
+.navbar2 {
+    .column(6);
+}
+
+.info {
+    .column(3);
+}
+
+.wrap-all {
+    .container();
+    max-width: 960px;
+}
+
+.main {
+    padding: @magic-number * 2 - @magic-gutter;
+}
+
+.main.has-sidebar {
+    float: left;
+    .column(7);
+    padding-left: 4 + @magic-number * 2 - @magic-gutter;
+}
+
+.sidebar {
+    float: left;
+    .column(3);
+    margin-bottom: @magic-number * 2;
+    padding-left: @magic-number * 2 - @magic-gutter;
+}
+
+.after-main {
+    height: 160px;
+}
+
+.footer-column {
+    .column(4);
+    margin-bottom: @magic-number;
+}
+
+.site-footer {
+    text-align: center;
+}
+
+.byline-image {
+    position: absolute;
+    display: inline;
+    width: 80px;
+    margin-right: @magic-number;
+    border-radius: 50%;
+    border: 2px solid #2E9972;
+
+}
+
+.byline-text {
+    position: absolute;
+    margin-top: -3px;
+    margin-left: 152px;
+}
+
+.byline {
+    position: relative;
+    padding: @magic-number * 2 - @magic-gutter;
+}
+
+
+/* Fix it so that your sidebar has some whitespace in between towards your main content thingy.*/
