@@ -1,0 +1,87 @@
+/**
+* Anax Flat theme.
+*/
+@import url(theme.less);
+@import url(modules.less);
+@import url(media-queries.less);
+
+// Magic number.
+@magicNumber: 24px;
+
+/** --------------------------------------------------------------
+*  Some colors:
+*/
+@myDarkGreen: #316E01;
+@myGreen: #408A01;
+@myBlack: #0D0D0D; //#2A4B8C;
+@myTeal: #2E9972;
+
+
+
+/** --------------------------------------------------------------
+*  Change the variables to style the base theme in base.less.
+*/
+
+// Responsive menu color.
+@rmButtonColor: black;
+
+/** --------------------------------------------------------------
+*   Text:
+*/
+// Header, logo and navbar text.
+@LogoTextColor: @myBlack;
+@navbarTextColor: @myBlack;
+// Main text.
+@mainTextColor: black;
+@mainParagrafTextColor: black;
+@mainLinkTextColor: black;
+// breadcrumb text.
+@breadcrumbLinkTextColor: black;
+// Footer text.
+@footerHColor: white;
+@footerTextColor: black;
+@footerLinkTextColor: inherit;
+@siteFooterTextColor: black;
+
+
+/** --------------------------------------------------------------
+*   Background colors:
+*/
+// Header
+@headerBGcolor: white;
+// Navbar
+@navbarBGcolor: transparent;
+@navbarHoverTopBG: transparent;
+// Main
+@bodyBGColor: white;
+@innerWrapBGColor: white;
+// Footer.
+@footerBGColor: white;
+@siteFooterBGcolor: white;
+
+
+/** --------------------------------------------------------------
+*   Border colors:
+*/
+// H1 and H2 borders.
+@colorH1BorderBottom: white;
+@colorH2BorderBottom: white;
+@borderSizeH1: 4px;
+@borderSizeH2: 2px;
+// Navbar
+@navbarBorderTop: transparent;
+@navbarHoverTopBorder: transparent;
+// Byline.
+@bylineBorderColor: transparent;
+@bylineBorderSize: 2px;
+// Footer
+@footerColumnBorder: white;
+
+/** --------------------------------------------------------------
+*   Override specific styles.
+*/
+body blockquote,
+body code {
+    background-color: @innerWrapBGColor;
+    border: transparent;
+}

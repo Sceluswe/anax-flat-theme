@@ -1,0 +1,96 @@
+/*
+---------------- vertical grid style ----------------
+*/
+
+@import "base.less";
+@import "typography-wrapper.less";
+
+@magicNumber: 24px;
+
+
+
+// ---------------- All content ----------------
+.inner-wrap {
+    body.route-typography & {
+        background: url("../img/hgrid.png") repeat;
+        color: black;
+    }
+
+    body.route-typography & article p {
+        color: black;
+    }
+}
+
+.site-logo-text {
+    font-size: 2.5em;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Article.
+ */
+
+.article p {
+    margin-top: 0px;
+}
+
+.article blockquote {
+    margin-bottom: @magicNumber - 6px;
+
+    p {
+        margin-bottom: 0px;
+    }
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Navbar.
+ */
+ // Make sure that the following regions don't over extend in size.
+.after-main,
+.content {
+    height: @magicNumber * 3;
+}
+
+.previous,
+.next {
+    margin-bottom: @magicNumber;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Breadcrumb
+ */
+.breadcrumb.text {
+    margin-top: @magicNumber;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Footer
+ */
+.footer h4 {
+    margin-top: @magicNumber - 4px;
+}
+
+.footer li {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.footer ul {
+    margin-top: 0px;
+}
+
+.footer ul li p {
+    margin-top: 0px;
+    margin-bottom: @magicNumber;
+}
+
+.footer-column-1 p {
+    margin-bottom: @magicNumber;
+}

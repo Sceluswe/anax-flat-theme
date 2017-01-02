@@ -1,63 +1,23 @@
-/**
-* Anax Flat theme.
-*/
-@import url(modules.less);
-@import url(vgrid.less);
-@import url(hgrid.less);
-@import url(media-queries.less);
-
-/** --------------------------------------------------------------
-*  Some colors:
-*/
-@myDarkGreen: #316E01;
-@myGreen: #408A01;
-@myBlack: #0D0D0D; //#2A4B8C;
-@myTeal: #2E9972;
-
-/** --------------------------------------------------------------
-*  Change the variables to style the base theme in base.less.
-*/
-
-@magicNumber: 24px;
-
-@LogoTextColor: @myDarkGreen;
-
-// h1
-@colorH1BorderBottom: black;
-@colorH2BorderBottom: black;
-@borderSizeH1: 4px;
-@borderSizeH2: 2px;
-
-// Determines background of navbar li border and navbar.
-@navbarBGcolor: black;
-
-@navbarBorderTop: @myDarkGreen;
-@navbarHoverTopBorder: @myGreen;
-@navbarTextColor: @myBlack;
-
-// Color of ALL links.
-@LinkColor: @myGreen;
-
-// Byline.
-@bylineBorderColor: @myGreen;
-@bylineBorderSize: 2px;
-
-// Footer.
-@footerBGColor: @myBlack;
-@footerTextColor: black;
-
-
 /** --------------------------------------------------------------
 *  Main content
 */
-
 body {
-    background-color: black;
+    background-color: @bodyBGColor;
 }
 
 .inner-wrap {
     background-color: @innerWrapBGColor;
+    color: @mainTextColor;
 }
+
+.inner-wrap-main p {
+    color: @mainParagrafTextColor;
+}
+
+.inner-wrap-main a {
+    color: @mainLinkTextColor;
+}
+
 
 
 /** --------------------------------------------------------------
@@ -68,6 +28,19 @@ body {
     height: 50px;
 }
 
+.fa-bars {
+    color: @rmButtonColor;
+}
+
+.inner-wrap-header {
+    background-color: @headerBGcolor;
+}
+
+.rm-menu {
+    color: white;
+}
+
+
 
 /** --------------------------------------------------------------
 *  Navbar
@@ -77,10 +50,12 @@ body {
     color: @navbarTextColor;
 
     a {
-        border-top: 4px solid @navbarBGcolor;
+        background-color: @navbarBGcolor;
+        border-top: 4px solid transparent;
     }
 
     a:hover {
+        background-color: @navbarHoverTopBG;
         border-top: 4px solid @navbarHoverTopBorder;
     }
 }
@@ -89,6 +64,14 @@ body {
     border-top: 4px solid @navbarHoverTopBorder;
 }
 
+.rm-desktop li.selected {
+    border-top: 4px solid @navbarHoverTopBorder;
+
+    a {
+        background-color: @navbarHoverTopBG;
+        border-top: 4px solid @navbarHoverTopBorder;
+    }
+}
 
 // Size each item in the header
 .site-logo-text,
@@ -98,6 +81,12 @@ body {
 }
 
 
+
+
+
+/** --------------------------------------------------------------
+*   Logo and logo images
+*/
 // Site title
 .site-logo-text {
     a {
@@ -110,19 +99,6 @@ body {
     display: none;
 }
 
-
-/** --------------------------------------------------------------
- *  Links.
- */
-a {
-    color: @LinkColor;
-}
-
-
-
-/** --------------------------------------------------------------
- *  Logo images
- */
 .logo-1 {
     position: absolute;
     top: 70px;
@@ -152,21 +128,39 @@ a {
     content: " »";
 }
 
+.inner-wrap-breadcrumb a {
+    color: @breadcrumbLinkTextColor;
+}
+
+
+
+/** --------------------------------------------------------------
+ *  Byline
+ */
+.byline-image {
+    border: @bylineBorderSize solid @bylineBorderColor;
+}
+
 
 
 /** --------------------------------------------------------------
  *  Footer
  */
-
-.inner-wrap-footer,
-.footer,
-.site-footer {
+.inner-wrap-footer {
     background-color: @footerBGColor;
-    color: @footerTextColor;
 }
 
 .footer ul {
     list-style: none;
+}
+
+.footer h4 {
+    font-size: 24px;
+    color: @footerHColor;
+}
+
+.footer a {
+    color: @footerLinkTextColor;
 }
 
 .footer-column-1,
@@ -175,6 +169,12 @@ a {
     height: 264px;
     padding-left: @magicNumber;
     padding-right: @magicNumber;
+    color: @footerTextColor;
+}
+
+.site-footer {
+    background-color: @siteFooterBGcolor;
+    color: @siteFooterTextColor;
 }
 
 .footer-column-1 {

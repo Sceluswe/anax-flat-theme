@@ -13,8 +13,8 @@
 .typographyHeadings() {
     h1, h2, h3, h4, h5, h6 {
         font-family: @fontFamilyHeadings;
-        margin-top: @magicNumber;
-        margin-bottom: @magicNumber - @borderSizeH1;
+        margin-top: 0px;
+        margin-bottom: @magicNumber;
         img {
             margin: 0;
         }
@@ -25,7 +25,8 @@
         font-weight: normal;
 
         border-bottom: @borderSizeH1 solid @colorH1BorderBottom;
-        margin-top: 5px;
+        //margin-top: @magicNumber - 4px;
+        margin-top: 0px; //@magicNumber;
         margin-bottom: @magicNumber - @borderSizeH1;
 
         // If header below h1, then assume larger margin top
@@ -34,14 +35,17 @@
         & ~ h3,
         & ~ h4,
         & ~ h5,
-        & ~ h6,
-         {
+        & ~ h6 {
             margin-top: @magicNumber * 2;
         }
 
         // Single margin when subheader follows directly
         & + h2 {
-            margin-top: @magicNumber;
+            margin-top: @magicNumber * 2 - @borderSizeH1;
+        }
+
+        & + h3 {
+            margin-top: @magicNumber * 2 - @borderSizeH1;
         }
     }
 
@@ -50,12 +54,16 @@
         font-weight: normal;
 
         margin-top: @magicNumber * 2;
-        margin-bottom: @magicNumber - @borderSizeH2;
+        margin-bottom: (@magicNumber - @borderSizeH2);
 
         border-bottom: @borderSizeH2 solid @colorH2BorderBottom;
 
-        & + h3 {
-            margin-top: @magicNumber;
+        // Single margin when subheader follows directly
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-top: @magicNumber * 2 - @borderSizeH2;
         }
     }
 
@@ -66,6 +74,9 @@
 
     h4 {
         .fontSize(@fontSizeH4);
+        margin-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: @magicNumber;
         font-weight: normal;
     }
 
@@ -92,7 +103,7 @@
 .typographyTextElements() {
     p {
         .fontSize(@fontSizeH5);
-        margin-top: @magicNumber * 1.1;
+        margin-top: 0px;
         margin-bottom: @magicNumber;
     }
 
@@ -186,7 +197,7 @@
     }
 
     pre {
-        margin-top: @magicNumber;
+        //margin-top: @magicNumber;
         margin-bottom: @magicNumber;
     }
 
@@ -200,7 +211,7 @@
         border-top:    @borderSizeCodeblock solid @colorCodeBlockBorder;
         border-bottom: @borderSizeCodeblock solid @colorCodeBlockBorder;
 
-        margin-top:    @magicNumber - @borderSizeCodeblock;
+        //margin-top:    @magicNumber - @borderSizeCodeblock;
         margin-bottom: @magicNumber - @borderSizeCodeblock;
 
         padding-top:    @magicNumber / 2;
@@ -221,12 +232,11 @@
 
     ul,
     ol {
-        margin-top:    @magicNumber;
-        margin-bottom: @magicNumber * 1.125;
+        //margin-top:    @magicNumber;
+        margin-bottom: @magicNumber;
         padding-left: 1.5em;
 
         p {
-            margin-top:    @magicNumber / 2;
             margin-bottom: @magicNumber / 2;
         }
 
@@ -242,6 +252,10 @@
 
     ol {
           list-style-type: decimal;
+    }
+
+    li {
+        margin-bottom: @magicNumber;
     }
 
     // dl dt dd

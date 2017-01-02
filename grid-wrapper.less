@@ -1,0 +1,65 @@
+/**
+* Module that wraps both the vertical grid and the horisontal grid
+* in order to make sure that they are displayed in front of anything
+* else if the user enters ?vgrid or ?hgrid in the URL field of the
+* browser.
+ */
+
+@import "layout.less";
+@import "hgrid.less";
+
+
+/*
+* ----------------------------------------------------------------
+* Code that is added if the afore mentioned URL variabel exists:
+*/
+.inner-wrap {
+    html.hgrid & {
+        background: url("../img/hgrid.png") repeat;
+
+        p {
+            color: black;
+        }
+    }
+
+    html.vgrid & {
+        .showGrid(@gridWidth, @gridImage);
+        color: black;
+
+        p {
+            color: black;
+        }
+    }
+
+    &.inner-wrap-header,
+    &.inner-wrap-footer {
+        @gridWidth: 100%;
+
+        .grid(@gridWidth);
+
+        html.hgrid & {
+            background: url("../img/hgrid.png") repeat;
+            color: black;
+
+            p {
+                color: black;
+            }
+        }
+
+        html.vgrid & {
+            .showGrid(@gridWidth, @gridImage);
+            color: black;
+
+            p {
+                color: black;
+            }
+        }
+    }
+}
+
+
+// Above code makes the html content larger than 100% strangely.
+// Below code hides the overflow.
+html {
+    overflow-x: hidden;
+}

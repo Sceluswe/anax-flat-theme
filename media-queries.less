@@ -8,16 +8,33 @@ img {
 
 
 @media screen and (max-width: 900px) {
+    fieldset {
+        width: 90%;
+
+        select {
+            width: 90%;
+        }
+
+        pre {
+            overflow-x: auto;
+            font-size: 0.75em;
+        }
+    }
+
     .site-logo-text {
         width: 40%;
     }
-
+    // ---------------- Navbar ----------------
     .navbar2 {
-        width: 50%;
+        display: none;
     }
 
     .profile {
         width: 10%;
+    }
+
+    .flash-logo {
+        margin-left: 3px;
     }
 }
 
@@ -25,11 +42,8 @@ img {
 
 @media screen and (max-width: 750px) {
     .sidebar {
-        width: 100%;
-        //display: none;
-        clear: both;
         li {
-            padding: @magic-number / 4;
+            padding: @magicNumber / 4;
         }
     }
 }
@@ -37,61 +51,74 @@ img {
 
 
 @media screen and (max-width: 700px) {
-    // ---------------- Main body and sidebar ----------------
-    .main,
-    .main.has-sidebar {
-        padding: @magic-number;
-        width: 80%;
-    }
-
     // ---------------- Flash image ----------------
     .flash-logo {
-        width: 700px;
+        width: 650px;
     }
-
 
     // ---------------- Footer ----------------
-    .footer-column {
-        width: 100%;
-    }
-
     .footer-column-1 {
-        margin-bottom: @magic-number * 4;
+        margin-bottom: @magicNumber * 4;
     }
 
     .footer-column-1,
     .footer-column-2,
     .footer-column-3 {
-        border: none;
-        display: block;
+        border: transparent;
         list-style: none;
     }
 
-    // ---------------- Navbar ----------------
-    .navbar2 {
-        display: none;
-    }
-
     // ---------------- Logo text ----------------
-     .site-logo-text {
-         width: 90%;
-     }
+    .site-logo-text {
+        width: 90%;
+    }
 }
 
 
 
 @media screen and (max-width: 560px) {
+    fieldset {
+        pre {
+            width: 360px;
+            font-size: 0.75em;
+        }
+    }
     // ---------------- Flash image ----------------
     .flash-logo {
         width: 560px;
         height: 70%;
     }
- }
+}
 
- @media screen and (max-width: 360px) {
-     // ---------------- Flash image ----------------
-     .flash-logo {
-         width: 360px;
-         height: 50%;
-     }
-  }
+@media screen and (max-width: 500px) {
+    // ---------------- Flash image ----------------
+    .flash-logo {
+        margin-left: 0px;
+    }
+}
+
+
+
+@media screen and (max-width: 460px) {
+    // ---------------- Flash image ----------------
+    .flash-logo {
+        width: 360px;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    fieldset {
+        pre {
+            width: 280px;
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    // ---------------- Flash image ----------------
+    .flash-logo {
+        width: 360px;
+        height: 50%;
+    }
+}

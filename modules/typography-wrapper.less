@@ -1,14 +1,30 @@
 @import "typography-font-families.less";
+
+// Variables for the typography-defauls.less
 @import "typography-sizes.less";
+
+// Some useful functions, used here and in typography-defaults.less
 @import "typography-mixins.less";
+
+// Sets defaults for all elements.
 @import "typography-defaults.less";
 
+@magicNumber: 24px;
+
 body {
-    .font(24px);
+    .font(@magicNumber);
     .typographyHeadings();
     .typographyTextElements();
     .typographyCodeElements();
     .typographyListElements();
     .typographyTableElements();
     .typographyOtherElements();
+}
+
+.toc li {
+    margin-bottom: 24px;
+}
+
+.breadcrumb-list ul {
+    margin-top: @magicNumber;
 }

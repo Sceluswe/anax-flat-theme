@@ -1,70 +1,209 @@
-.site-logo-text {
-    .column(4);
+/*
+---------------- vertical grid style ----------------
+*/
+/**
+* Anax Flat theme.
+*/
+@import "grid.less";
+
+@magicNumber: 24px;
+
+
+@gridWidth: 900px;
+
+//@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
+@gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
+
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+
+
+
+// ---------------- All content ----------------
+.inner-wrap {
+    .grid(@gridWidth);
+
+    body.route-grid & {
+        .showGrid(@gridWidth, @gridImage);
+    }
+
+    &.inner-wrap-header,
+    &.inner-wrap-footer {
+        @gridWidth: 100%;
+
+        .grid(@gridWidth);
+
+        html.vgrid &,
+        body.route-grid & {
+            .showGrid(@gridWidth, @gridImage);
+        }
+    }
 }
 
-.navbar2 {
-    .column(6);
+.row {
+    .row();
 }
 
-.info {
-    .column(3);
+// Classes for the analysis page.
+.colorScheme1row {
+    height: @magicNumber * 4 - 7;
 }
 
-.wrap-all {
-    .container();
-    max-width: 960px;
+.colorScheme2rows {
+    height: @magicNumber * 8 - 7;
+}
+
+.analyzedWebsite1 {
+    height: @magicNumber * 30 - 7;
+}
+
+.analyzedWebsite2 {
+    height: (@magicNumber * 29) - 7;
+}
+
+.analyzedWebsite3 {
+    height: (@magicNumber * 36) - 7;
+}
+
+.analyzedWebsite4 {
+    height: (@magicNumber * 19) - 7;
+}
+
+// Apply bottom margins to separate: header, main, after and footer.
+.outer-wrap-header {
+    margin-bottom: @magicNumber;
 }
 
 .main {
-    padding: @magic-number * 2 - @magic-gutter;
+    padding-bottom: @magicNumber;
+}
+
+.after-main,
+.footer-column-wrapper {
+    padding-top: @magicNumber;
+    padding-bottom: @magicNumber * 2;
+}
+
+.footer-column-wrapper {
+    .clearfix();
+}
+
+.next-previous {
+    height: @magicNumber * 3;
+    display: block;
+}
+
+.next {
+    float: right;
+}
+
+.previous {
+    float: left;
+}
+
+
+
+// ---------------- Header and Flash ----------------
+.logo-1 {
+    display: none;
+}
+
+.site-logo-text {
+    .column(6);
+    padding-left: @gutterWidth;
+}
+
+.navbar2 {
+    .column(16);
+}
+
+.flash-logo {
+    .column(24);
+    height: @magicNumber * 13;
+    margin-left: 5px;
+}
+
+
+
+// ---------------- Breadcrumb ----------------
+.breadcrumb-wrap {
+    .column(24);
+    height: @magicNumber * 3;
+}
+
+
+
+// ---------------- Main ----------------
+.main {
+    .column(22);
+    .push(1);
 }
 
 .main.has-sidebar {
-    float: left;
-    .column(7);
-    padding-left: 4 + @magic-number * 2 - @magic-gutter;
+    .column(13);
+    .push(1);
 }
 
 .sidebar {
-    float: left;
-    .column(3);
-    margin-bottom: @magic-number * 2;
-    padding-left: @magic-number * 2 - @magic-gutter;
+    .column(8);
+    .push(1);
+}
+
+.sidebar ul li {
+    min-height: 24px;
 }
 
 .after-main {
-    height: 160px;
+    min-height: 85px;
 }
 
-.footer-column {
-    .column(4);
-    margin-bottom: @magic-number;
-}
 
-.site-footer {
-    text-align: center;
+
+// ---------------- Byline ----------------
+.byline {
+    position: relative;
 }
 
 .byline-image {
-    position: absolute;
+    .column(4);
+    .push(2);
     display: inline;
-    width: 80px;
-    margin-right: @magic-number;
+    max-width: 64px;
     border-radius: 50%;
-    border: 2px solid #2E9972;
-
 }
 
 .byline-text {
+    .column(20);
     position: absolute;
-    margin-top: -3px;
-    margin-left: 152px;
-}
-
-.byline {
-    position: relative;
-    padding: @magic-number * 2 - @magic-gutter;
+    margin-top: 24px;
 }
 
 
-/* Fix it so that your sidebar has some whitespace in between towards your main content thingy.*/
+
+
+
+// ---------------- Footer ----------------
+.footer {
+    padding-bottom: @magicNumber;
+    margin-top: @magicNumber;
+}
+
+.footer-column-wrapper {
+    .push(3);
+}
+
+.footer-column {
+    .column(@columns / 3);
+}
+
+.footer-column-1,
+.footer-column-2,
+.footer-column-3 {
+    padding-left: @magicNumber * 2 + 4;
+}
+
+.site-footer {
+    .column(@columns);
+    text-align: center;
+}

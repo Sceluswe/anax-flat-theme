@@ -2,9 +2,13 @@
  * Responsive Grid
  */
 // Default grid, change to fit your requirements.
-@columnWidth:   60;
-@gutterWidth:   0;
-@columns:       12;
+/*@columnWidth:   60;
+@gutterWidth:   20;
+@columns:       12;*/
+
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
 
 // Utility variable, you should never need to modify this
 @gridSystemWidth: @columns * (@columnWidth + @gutterWidth) * 1px;
@@ -13,6 +17,28 @@
 @totalWidth: 100% / @gridSystemWidth;
 
 
+/**
+ * Wrap grid in a container.
+ */
+.grid(@maxWidth: 1100px) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: @maxWidth;
+}
+
+/**
+ * Show grid.
+ */
+.showGrid(@maxWidth: 1100px, @gridWidth) {
+    background: url("@{gridWidth}") repeat-y fixed center center;
+    background-size: 100% auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: @maxWidth) {
+        background-size: @maxWidth auto;
+    }
+}
 
 /**
  * A small clearfix:
@@ -24,16 +50,6 @@
         display: block;
         clear:both;
     }
-}
-
-
-
-/**
- * Wrap grid in a container.
- */
-.container() {
-    margin-right: auto;
-    margin-left: auto;
 }
 
 
@@ -65,8 +81,6 @@
 
     margin-left:  @totalWidth * @gutterWidth / 2;
     margin-right: @totalWidth * @gutterWidth / 2;
-
-    //box-sizing: border-box;
 }
 
 
